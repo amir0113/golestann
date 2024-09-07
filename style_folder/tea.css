@@ -1,0 +1,666 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: "PoppinsLatin-Black";
+  src: url("../assest/font/transfonter.org-20240827-141652/PoppinsLatin-Black.ttf");
+  src: url("../assest/font/transfonter.org-20240827-141652/PoppinsLatin-Black.woff");
+  src: url("../assest/font/transfonter.org-20240827-141652/PoppinsLatin-Black.woff2");
+}
+
+@keyframes teabot {
+  0% {
+    transform: translateY(0);
+    transform: rotate(0);
+  }
+  25% {
+    transform: translateY(-60px) rotate(-45deg);
+  }
+  100% {
+    transform: translateY(-60px) rotate(-45deg);
+  }
+}
+
+@keyframes teacup {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+@keyframes teamain {
+  0% {
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes potdoor {
+  0% {
+    transform: translateY(0px);
+    transform: translate(0px);
+  }
+  50% {
+    transform: translateY(-120px);
+  }
+  100% {
+    transform: translateX(-137px) translateY(-87px);
+    z-index: 5;
+  }
+}
+
+@keyframes bokhar {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+body {
+  background-color: black;
+  font-family: "PoppinsLatin-Black";
+  margin: 0;
+  padding: 0;
+}
+header {
+  margin-top: 30px;
+
+  .backgroundcolor {
+    position: sticky;
+    background-color: #212121;
+    height: 100px;
+    z-index: 100;
+  }
+  .img_logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    position: fixed;
+    left: 50px;
+    top: 30px;
+    z-index: 1000;
+
+    img {
+      width: 100px;
+      height: 50px;
+    }
+  }
+
+  ul {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    position: fixed;
+    right: 560px;
+    top: 30px;
+    z-index: 9999;
+
+    li {
+      position: relative;
+    
+      .sub_menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #00000096;
+        width: 150px;
+        padding: 10px;
+        border-radius: 5px;
+        list-style: none;
+        color: rgba(255, 255, 255, 0.726);
+
+        li:hover & {
+          display: block;
+        }
+
+        .menu,
+        .sub_menu,
+        li:hover {
+          color: red;
+          transform: scale(1.1);
+          transition: 400ms;
+        }
+      }
+    }
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .menu {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      left: 0;
+      top: 7;
+      display: block;
+      content: "";
+      width: 0;
+      height: 10px;
+      border-bottom: 3px solid white;
+      border-radius: 5px;
+      z-index: 0;
+      transition: 200ms;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  .signin,
+  .login {
+    width: 100px;
+    height: 50px;
+    position: fixed;
+    z-index: 2;
+    color: white;
+
+    &.signin {
+      right: 150px;
+      top: 30px;
+    }
+
+    &.login {
+      right: 20px;
+      top: 30px;
+    }
+
+    &:hover {
+      &::after {
+        transform: scale(1.1);
+      }
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+}
+main {
+  .text{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    margin: 100px 0px 30px 0px;
+    p{
+      color: white;
+      font-size: 40px;
+    }
+  }
+  .item{
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    .Red{
+      background-color: #fa0000;
+      border-color: #fa0000;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+    }
+    .Green{
+      background-color: #25fa00;
+      border-color: #25fa00;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+    }
+    .subtitle{
+      display: flex;
+      justify-content: space-around;
+      color: white;
+      margin-top: 10px;
+    }
+    .Green-tea-bag {
+      background-color: #d4fa00;
+      border-color: #d4fa00;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+    }
+    .black-line {
+      background-color: #f200fad6;
+      border-color: #f200fad6;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+    }
+  }
+  .Featured__Products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    margin: 0;
+    margin: 100px 0px 0px 0px;
+    h4 {
+      display: flex;
+      margin-left: 1%;
+      word-spacing: 3px;
+      color: white;
+      margin-top: 165px;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .card {
+        border-radius: 10px;
+        color: white;
+        width: 330px;
+        background-position: 500px center;
+        transition: 400ms;
+        margin: 10px 10px 10px 10px;
+        .card__image {
+          display: flex;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          width: 100%;
+          height: 290px;
+          .logo {
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            left: 120px;
+          }
+        }
+
+        .card__info {
+          font-weight: normal;
+          padding: 0px 5px 10px 10px;
+          text-align: left;
+          .card__offer {
+            margin-top: -12px;
+            margin-bottom: -11px;
+            margin-left: 6px;
+            .offer__percentage {
+              background-color: #ffebee;
+              color: #fa0000;
+              font-weight: 600;
+              font-size: 14px;
+              margin-left: 5px;
+              border-radius: 2px;
+            }
+            .offer__number {
+              color: #fa0000;
+              font-size: 14px;
+              text-decoration: line-through;
+              text-decoration-color: white;
+            }
+          }
+        }
+
+        .wraper {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: -14px;
+
+          .card__price {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            h5 {
+              font-size: 18px;
+            }
+
+            .price__number {
+              margin-left: 5px;
+            }
+          }
+
+          .card__rating {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            .rating__icon {
+              .icon {
+                width: 18px;
+                height: 18px;
+                color: rgb(255, 230, 0);
+              }
+            }
+          }
+        }
+
+        h4 {
+          color: white;
+          font-size: 25px;
+          margin: 16px 0px;
+        }
+        .title {
+          color: white;
+          font-size: 25px;
+          margin: 16px 6px;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        height: 78px;
+        color: white;
+        line-height: 25px;
+        margin: 0px 0px 19px 6px;
+        overflow-y: hidden;
+      }
+      button {
+        width: 110px;
+        height: 50px;
+        padding: 10px 25px;
+        border: unset;
+        border-radius: 10px;
+        color: #212121;
+        z-index: 1;
+        background: #e8e8e8;
+        position: relative;
+        font-weight: 1000;
+        font-size: 17px;
+        -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        transition: all 250ms;
+        overflow: hidden;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 0;
+          border-radius: 10px;
+          background-color: #ff0000;
+          z-index: -1;
+          box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+          transition: all 250ms;
+        }
+
+        &:hover {
+          color: #e8e8e8;
+
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .teabag {
+    .tea {
+      top: 100px;
+    }
+  }
+  .tea__card {
+    background-color: #333333;
+
+    &:hover {
+      transform: scale(1.05);
+
+      .teabot {
+        animation: teabot;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+      }
+
+      .teacup {
+        animation: teacup;
+        animation-duration: 500ms;
+        animation-fill-mode: forwards;
+      }
+
+      .tea_main {
+        animation: teamain;
+        animation-duration: 2s;
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    .card__image {
+      background-image: url("../assest/image/bg.png");
+      background-size: 352px 382px;
+      background-repeat: no-repeat;
+      .tea,
+      .teacup,
+      .teabot,
+      .tea_main .teabag {
+        position: relative;
+      }
+      .tea {
+        width: 150px;
+        height: 150px;
+        right: 246px;
+        top: 110px;
+      }
+      .teabag {
+        top: 140px;
+      }
+
+      .teacup {
+        width: 150px;
+        height: 100px;
+        z-index: 2;
+        left: 96px;
+        top: 173px;
+      }
+      .teabot {
+        height: 160px;
+        margin-left: -61px;
+        z-index: 2;
+        left: 96px;
+        top: 115px;
+      }
+
+      .tea_main {
+        height: 191px;
+        visibility: hidden;
+        transition: 1000ms;
+        width: 232px;
+        position: relative;
+        right: 262px;
+        z-index: 3;
+        top: 88px;
+      }
+    }
+  }
+
+  .rice__card {
+    background-color: hsla(0, 0%, 100%, 0.844);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    &:hover {
+      transform: scale(1.05);
+
+      .pot-door {
+        animation: potdoor;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+      }
+
+      .bokhar {
+        animation: slideInUp;
+        animation-duration: 3s;
+        animation-delay: 3s;
+        animation-iteration-count: infinite;
+      }
+    }
+  }
+
+  .card__image {
+    background-image: url("../assest/image/back3.png");
+    background-size: cover;
+    display: flex;
+    position: relative;
+  }
+
+  .pot,
+  .pot-door,
+  .rice,
+  .gas,
+  .rice__logo,
+  .bokhar {
+    position: absolute;
+  }
+
+  .bokhar {
+    visibility: hidden;
+    width: 23px;
+    height: 141px;
+    opacity: 42%;
+    left: 197px;
+    top: 9px;
+    z-index: 1;
+  }
+
+  .pot {
+    top: 67px;
+    right: 60px;
+    width: 197px;
+    height: 192px;
+    z-index: 5;
+  }
+
+  .pot-door {
+    top: 191px;
+    left: 238px;
+    width: 140px;
+    height: 108px;
+  }
+
+  .rice {
+    bottom: 20px;
+    right: 200px;
+    width: 150px;
+    height: 172px;
+  }
+
+  .gas {
+    top: 135px;
+    left: 88px;
+    width: 196px;
+    height: 215px;
+    z-index: 3;
+  }
+
+  .rice__logo {
+    top: 5px;
+    left: 123px;
+    width: auto;
+  }
+
+  .card__info {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+  }
+
+  .card__offer {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  .card__price,
+  .card__rating {
+    display: flex;
+    align-items: center;
+  }
+
+  .price__number {
+    font-size: 1.5em;
+    margin-right: 5px;
+  }
+
+  .rating__number {
+    margin-right: 5px;
+  }
+
+  .buy-button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .buy-button:hover {
+    background-color: #218838;
+  }
+}
+footer {
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+
+  .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    .footer-section {
+      h3 {
+        width: fit-content;
+        border-bottom: 2px solid white;
+        padding-bottom: 7px;
+        margin-bottom: 15px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+          margin: 10px 0;
+
+          a {
+            color: rgba(255, 255, 255, 0.825);
+            text-decoration: none;
+            transition: color 0.3s;
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+      .teai svg,
+      .servicei svg,
+      .newi svg {
+        transition: 400ms;
+      }
+      .teai:hover svg {
+        fill: rgb(226, 22, 226);
+      }
+      .servicei:hover svg {
+        fill: aqua;
+      }
+      .newi:hover svg {
+        fill: rgb(30, 255, 0);
+      }
+    }
+  }
+}

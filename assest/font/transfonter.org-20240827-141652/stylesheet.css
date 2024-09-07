@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Poppins Latin';
+    src: url('PoppinsLatin-Black.woff2') format('woff2'),
+        url('PoppinsLatin-Black.woff') format('woff'),
+        url('PoppinsLatin-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+

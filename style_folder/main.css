@@ -1,0 +1,215 @@
+@font-face {
+  font-family: "PoppinsLatin-Black";
+  src: url(../assets/font/transfonter.org-20240827-141652/PoppinsLatin-Black.ttf);
+  src: url(../assets/font/transfonter.org-20240827-141652/PoppinsLatin-Black.woff);
+  src: url(../assets/font/transfonter.org-20240827-141652/PoppinsLatin-Black.woff2);
+}
+
+@keyframes bowl_image_in {
+  0% {
+    transform-origin: bottom right;
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform-origin: bottom right;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bowl_image_out {
+  0% {
+    transform-origin: bottom right;
+    transform: rotate(0deg);
+  }
+  100% {
+    transform-origin: bottom right;
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes fadeOutBottomRight {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(50px, 50px);
+  }
+}
+
+body {
+  margin: 0;
+  font-family: PoppinsLatin-Black;
+  background-color: #001;
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 900px; 
+    overflow: hidden;
+  
+    .slides {
+      display: flex;
+  
+      .slide {
+        min-width: 100%;
+        height: 900px;
+        background-size: cover;
+        background-position: center;
+        animation-duration: 5s;
+  
+        &.slide1 {
+          background-image: url('../assest/image/img2.png');
+          display: block;
+        }
+  
+        &.slide2 {
+          background-image: url('../assest/image/img1.png');
+          display: none; 
+        }
+  
+        &.slide3 {
+          background-image: url('../assest/image/img3.png');
+          display: none; 
+        }
+  
+        &.slide4 {
+          background-image: url('../assest/image/img4.png');
+          display: none; 
+        }
+      }
+    }
+  }
+  
+  .slide_wraper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  
+  .info {
+    text-align: left;
+    padding-left: 50px;
+    padding-top: 120px;
+    color: white;
+  
+    h2 {
+      font-size: 50px;
+      line-height: 10px;
+      transition: 300ms;
+      margin: 50px 0;
+  
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  
+    p {
+      width: 300px;
+      height: 300px;
+      transition: 300ms;
+      line-height: 23px;
+  
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  .bowl_image {
+    padding-top: 350px;
+    padding-right: 70px;
+    transition: 300ms;
+    animation: bowl_image_in 2s forwards;
+  
+    &:hover {
+      transform: scale(1.2);
+    }
+  
+    img {
+      width: 500px;
+      height: 500px;
+    }
+  }
+  
+  .image3 {
+    padding-top: 390px;
+    padding-right: 90px;
+  
+    img {
+      width: 450px;
+      height: 450px;
+    }
+  }
+  
+  .image4,
+  .image1 {
+    img {
+      width: 510px;
+      height: 510px;
+    }
+  }
+  
+  .thumbs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    border-radius: 100%;
+    margin-top: 50px;
+    margin-left: -23px;
+  
+    .thumb3 {
+      width: 97px;
+      height: 97px;
+    }
+  
+    .thumb4 {
+      width: 115px;
+      height: 115px;
+    }
+  }
+  
+  .thumb {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin: 0 5px; 
+  
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  
+  .subimage {
+    animation: fadeInBottomRight;
+    animation-duration: 2.5s;
+  
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  
+    .image1 {
+      transform: rotate(-35deg);
+      position: relative;
+      padding-left: 100px;
+      left: 300px;
+    }
+  
+    .image2 {
+      transform: rotate(-70deg);
+      bottom: 100px;
+    }
+  
+    .image3 {
+      transform: rotate(-100deg);
+      position: relative;
+      right: 160px;
+      bottom: 150px;
+    }
+  }
+}
+
